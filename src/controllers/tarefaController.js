@@ -27,38 +27,9 @@ async function criar(req, res) {
   res.status(201).json(novaTarefa);
 }
 
-async function atualizar(req, res) {
-  const tarefaAtualizada = await tarefaService.atualizarTarefa(req.params.id, req.body);
-  if (!tarefaAtualizada) {
-    res.status(404).json({ erro: "Tarefa nao encontrada" });
-    return;
-  }
-  res.status(200).json(tarefaAtualizada);
-}
-
-async function atualizarParcial(req, res) {
-  const tarefaAtualizada = await tarefaService.atualizarParcialTarefa(req.params.id, req.body);
-  if (!tarefaAtualizada) {
-    res.status(404).json({ erro: "Tarefa nao encontrada" });
-    return;
-  }
-  res.status(200).json(tarefaAtualizada);
-}
-
-async function deletar(req, res) {
-  const deletada = await tarefaService.deletarTarefa(req.params.id);
-  if (!deletada) {
-    res.status(404).json({ erro: "Tarefa nao encontrada" });
-    return;
-  }
-  res.status(204).send();
-}
 
 module.exports = {
   listar,
   buscarPorId,
   criar,
-  atualizar,
-  atualizarParcial,
-  deletar
-};
+}

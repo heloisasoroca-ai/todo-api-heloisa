@@ -37,45 +37,8 @@ async function criarTarefa(dados) {
   return await buscarTarefaPorId(resultado.insertId);
 }
 
-async function atualizarTarefa(id, dados) {
-  const [resultado] = await db.query(
-    "UPDATE tarefas SET titulo = ?, prioridade = ?, status = ? WHERE id = ?",
-    [dados.titulo, dados.prioridade, dados.status, id],
-  );
-  if (resultado.affectedRows === 0) return null;
-  return await buscarTarefaPorId(id);
-}
-
-async function deletarTarefa(id) {
-  const [resultado] = await db.query("DELETE FROM tarefas WHERE id = ?", [id]);
-  return resultado.affectedRows > 0;
-}
-
-function validarTarefa(dados, completo) {
-  if (!dados) return "Envie os dados da tarefa em JSON";
-  if (completo && !dados.titulo) return "O titulo e obrigatorio";
-  if (completo && !dados.prioridade) return "A prioridade e obrigatoria";
-  if (completo && !dados.status) return "O status e obrigatorio";
-
-  if (
-    dados.prioridade !== undefined &&
-    !PRIORIDADES.includes(dados.prioridade)
-  ) {
-    return "A prioridade deve ser baixa, media ou alta";
-  }
-
-  if (dados.status !== undefined && !STATUS.includes(dados.status)) {
-    return "O status deve ser a_fazer, fazendo ou feita";
-  }
-
-  return null;
-}
-
 module.exports = {
   listarTarefas,
   buscarTarefaPorId,
   criarTarefa,
-  atualizarTarefa,
-  deletarTarefa,
-  validarTarefa,
 };
