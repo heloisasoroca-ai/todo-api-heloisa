@@ -66,4 +66,4 @@ return "O status deve ser a_fazer, fazendo ou feita";
 return null;
 }
 
-module.exports = {listarTarefas};
+module.exports = {listarTarefas, criarTarefa, atualizarTarefa, deletarTarefa, validarTarefa};

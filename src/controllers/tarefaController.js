@@ -29,4 +29,4 @@ return;
 }
 }
 
-module.exports = {listar};
+module.exports = {listar, buscarPorId, criar, criarTarefa};
