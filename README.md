@@ -22,7 +22,7 @@ _(Sprint 2: uma linha para cada rota da API)_
 
 ## Diagrama de classes
 
-![Diagrama de classes](docs/diagrama-classes.png)
+![Diagrama de classes](https://github.com/heloisasoroca-ai/todo-api-heloisa/blob/main/docs/diagrama-classes.png)
 
 ---
 
