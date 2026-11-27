@@ -34,7 +34,7 @@ _(Sprint 2: uma linha para cada rota da API)_
 
 **Quadro no início:**
 
-docs/sprint1-inicio.png
+![Quadro no início do Sprint 1](https://github.com/heloisasoroca-ai/todo-api-heloisa/blob/main/docs/sprint1-inicio.png)
 
 **Quadro no fim:**
 
